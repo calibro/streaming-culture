@@ -1,16 +1,36 @@
 <!DOCTYPE html>
-<body style="padding:0;margin:0;background-color: #f5f5f5;">
-<div id="observablehq-chart-667fe6b4"></div>
-<div id="observablehq-style-667fe6b4" style="display: none;"></div>
-<div id="observablehq-tooltip-667fe6b4"></div>
-<script type="module">
-import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/d/9733d918a49c61f3.js?v=3";
-new Runtime().module(define, name => {
-  if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-667fe6b4"));
-  if (name === "style") return new Inspector(document.querySelector("#observablehq-style-667fe6b4"));
-  if (name === "tooltip") return new Inspector(document.querySelector("#observablehq-tooltip-667fe6b4"));
-  return ["update","showTooltip","hideTooltip","debounced"].includes(name);
-});
-</script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body style="padding: 0; margin: 0; background-color: #f5f5f5">
+    <div id="observablehq-chart-667fe6b4"></div>
+    <div id="observablehq-style-667fe6b4" style="display: none"></div>
+    <div id="observablehq-tooltip-667fe6b4"></div>
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/d/9733d918a49c61f3.js?v=3";
+      new Runtime().module(define, (name) => {
+        if (name === "chart")
+          return new Inspector(
+            document.querySelector("#observablehq-chart-667fe6b4")
+          );
+        if (name === "style")
+          return new Inspector(
+            document.querySelector("#observablehq-style-667fe6b4")
+          );
+        if (name === "tooltip")
+          return new Inspector(
+            document.querySelector("#observablehq-tooltip-667fe6b4")
+          );
+        return ["update", "showTooltip", "hideTooltip", "debounced"].includes(
+          name
+        );
+      });
+    </script>
+  </body>
+</html>

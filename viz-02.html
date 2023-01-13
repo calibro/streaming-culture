@@ -1,42 +1,84 @@
 <!DOCTYPE html>
-<body style="padding:0;margin:0;background-color: #f5f5f5;">
-    <div style="display: flex; align-items: center; justify-content:space-between; padding:5px;">
-        <div id="observablehq-viewof-post_type_selected-fed566fd"></div>
-        <div id="observablehq-legend-fed566fd"></div>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width" />
+  </head>
+  <body style="padding: 0; margin: 0; background-color: #f5f5f5">
+    <div
+      style="
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px;
+      "
+    >
+      <div id="observablehq-viewof-post_type_selected-fed566fd"></div>
+      <div id="observablehq-legend-fed566fd"></div>
     </div>
     <div id="observablehq-chart-fed566fd"></div>
     <div id="observablehq-tooltip-2026f752"></div>
-    <div id="style" style="display: none;"></div>
+    <div id="style" style="display: none"></div>
 
-<script type="module">
-import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/d/2acbbe54101f6ea0.js?v=3";
-new Runtime().module(define, name => {
-  if (name === "chart") return new Inspector(document.querySelector("#observablehq-chart-fed566fd"));
-  if (name === "style") return new Inspector(document.querySelector("#style"));
-  if (name === "legend") return new Inspector(document.querySelector("#observablehq-legend-fed566fd"));
-  if (name === "viewof post_type_selected") return new Inspector(document.querySelector("#observablehq-viewof-post_type_selected-fed566fd"));
-  if (name === "tooltip") return new Inspector(document.querySelector("#observablehq-tooltip-2026f752"));
-  return ["groupedData","flatGroupedData","colorScale","heatmapChart","update","showTooltip","hideTooltip","debounced"].includes(name);
-});
-</script>
-<style>
-    #observablehq-viewof-post_type_selected-fed566fd,  #observablehq-legend-fed566fd svg g{
-        font-family: 'HKGrotesk', Arial, sans-serif!important;
+    <script type="module">
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/d/2acbbe54101f6ea0.js?v=3";
+      new Runtime().module(define, (name) => {
+        if (name === "chart")
+          return new Inspector(
+            document.querySelector("#observablehq-chart-fed566fd")
+          );
+        if (name === "style")
+          return new Inspector(document.querySelector("#style"));
+        if (name === "legend")
+          return new Inspector(
+            document.querySelector("#observablehq-legend-fed566fd")
+          );
+        if (name === "viewof post_type_selected")
+          return new Inspector(
+            document.querySelector(
+              "#observablehq-viewof-post_type_selected-fed566fd"
+            )
+          );
+        if (name === "tooltip")
+          return new Inspector(
+            document.querySelector("#observablehq-tooltip-2026f752")
+          );
+        return [
+          "groupedData",
+          "flatGroupedData",
+          "colorScale",
+          "heatmapChart",
+          "update",
+          "showTooltip",
+          "hideTooltip",
+          "debounced",
+        ].includes(name);
+      });
+    </script>
+    <style>
+      #observablehq-viewof-post_type_selected-fed566fd,
+      #observablehq-legend-fed566fd svg g {
+        font-family: "HKGrotesk", Arial, sans-serif !important;
         font-size: 0.7rem;
-    }
+      }
 
-    #observablehq-viewof-post_type_selected-fed566fd form {
+      #observablehq-viewof-post_type_selected-fed566fd form {
         flex-direction: column;
-    }
+      }
 
-    #observablehq-viewof-post_type_selected-fed566fd form > label {
+      #observablehq-viewof-post_type_selected-fed566fd form > label {
         font-weight: bold;
         width: auto;
-    }
+      }
 
-    #observablehq-viewof-post_type_selected-fed566fd form input {
+      #observablehq-viewof-post_type_selected-fed566fd form input {
         accent-color: #5032c8;
-    }
-</style>
-</body>
+      }
+    </style>
+  </body>
+</html>
