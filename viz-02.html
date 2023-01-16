@@ -8,6 +8,7 @@
   <body style="padding: 0; margin: 0; background-color: #f5f5f5">
     <div class="controls">
       <div id="observablehq-viewof-post_type_selected-fed566fd"></div>
+      <div id="observablehq-viewof-post_type_selected_mobile-fed566fd"></div>
       <div id="observablehq-legend-fed566fd"></div>
     </div>
     <div id="observablehq-chart-fed566fd"></div>
@@ -28,21 +29,31 @@
           );
         if (name === "style")
           return new Inspector(document.querySelector("#style"));
-        if (name === "legend")
-          return new Inspector(
-            document.querySelector("#observablehq-legend-fed566fd")
-          );
-        if (name === "viewof post_type_selected")
+        if (name === "viewof post_type_selected_radio")
           return new Inspector(
             document.querySelector(
               "#observablehq-viewof-post_type_selected-fed566fd"
             )
           );
+
+        if (name === "legend")
+          return new Inspector(
+            document.querySelector("#observablehq-legend-fed566fd")
+          );
+
         if (name === "tooltip")
           return new Inspector(
             document.querySelector("#observablehq-tooltip-2026f752")
           );
+
+        if (name === "viewof post_type_selected_select")
+          return new Inspector(
+            document.querySelector(
+              "#observablehq-viewof-post_type_selected_mobile-fed566fd"
+            )
+          );
         return [
+          "post_type_selected",
           "groupedData",
           "flatGroupedData",
           "colorScale",
@@ -55,7 +66,12 @@
       });
     </script>
     <style>
+      #observablehq-viewof-post_type_selected-fed566fd {
+        display: none;
+      }
+
       #observablehq-viewof-post_type_selected-fed566fd,
+      #observablehq-viewof-post_type_selected_mobile-fed566fd,
       #observablehq-legend-fed566fd svg g {
         font-family: "HKGrotesk", Arial, sans-serif !important;
         font-size: 0.7rem;
@@ -79,7 +95,8 @@
         flex-direction: column;
       }
 
-      #observablehq-viewof-post_type_selected-fed566fd form > label {
+      #observablehq-viewof-post_type_selected-fed566fd form > label,
+      #observablehq-viewof-post_type_selected_mobile-fed566fd form > label {
         font-weight: bold;
         width: auto;
       }
@@ -107,6 +124,14 @@
 
         #observablehq-legend-fed566fd {
           position: relative;
+        }
+
+        #observablehq-viewof-post_type_selected_mobile-fed566fd {
+          display: none;
+        }
+
+        #observablehq-viewof-post_type_selected-fed566fd {
+          display: block;
         }
       }
     </style>
